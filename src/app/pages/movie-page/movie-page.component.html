@@ -35,7 +35,7 @@
 
 <app-modal
   *ngIf="modalService.isVisible$ | async" title="About Movie">
-  <app-create-movie></app-create-movie>
+  <app-movie-details></app-movie-details>
 </app-modal>
 
 <div *ngIf="!loading && movies.length > 0">

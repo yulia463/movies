@@ -9,7 +9,7 @@ import {GlobalErrorComponent} from './components/global-error/global-error.compo
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {FilterMoviesPipe} from 'src/app/pipes/filter-movies.pipe'
 import {ModalComponent} from './components/modal/modal.component'
-import {CreateMovieComponent} from 'src/app/components/create-movie/create-movie.component'
+import {MovieDetailsComponent} from 'src/app/components/movie-details/movie-details.component'
 import {FocusDirective} from './directives/focus.directive'
 import {MoviePageComponent} from 'src/app/pages/movie-page/movie-page.component'
 import {AboutPageComponent} from './pages/about-page/about-page.component';
@@ -22,7 +22,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     GlobalErrorComponent,
     FilterMoviesPipe,
     ModalComponent,
-    CreateMovieComponent,
+    MovieDetailsComponent,
     FocusDirective,
     MoviePageComponent,
     AboutPageComponent,

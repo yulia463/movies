@@ -3,10 +3,10 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
 import {MoviesService} from 'src/app/services/movies.service'
 
 @Component({
-  selector: 'app-create-movie',
-  templateUrl: './create-movie.component.html',
+  selector: 'app-movie-details',
+  templateUrl: './movie-details.component.html',
 })
-export class CreateMovieComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit {
 
   movieGenres: string[] = [];
 
