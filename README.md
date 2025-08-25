@@ -1,6 +1,18 @@
-# AngularCrashCourse2022
+# Angular Movie 2025
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+This is an Angular project for browsing movies, built with **Angular 14**.
+
+**Technologies used:**
+- Angular 14
+- TypeScript
+- RxJS
+- **Tailwind CSS** for styling and layout
+- Angular Router for navigation
+- HTTP requests to external Movie API
+
+> ⚠️ To run this project, you need a **Movie API key**. You can either request it from the project author or create your own on the API provider's website.
+
+---
 
 ## Development server
 
@@ -22,6 +34,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Author
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Yulia Slatvitskaya https://github.com/yulia463

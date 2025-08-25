@@ -20,5 +20,4 @@ export class MovieComponent {
     this.modalService.open()
   }
 
-  // details = false
 }

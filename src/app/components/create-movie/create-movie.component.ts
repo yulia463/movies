@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 import {MoviesService} from 'src/app/services/movies.service'
-import {ModalService} from '../../services/modal.service'
 
 @Component({
   selector: 'app-create-movie',
   templateUrl: './create-movie.component.html',
-  styleUrls: ['./create-movie.component.scss']
 })
 export class CreateMovieComponent implements OnInit {
 
@@ -14,10 +12,8 @@ export class CreateMovieComponent implements OnInit {
 
   constructor(
     public moviesService: MoviesService,
-    public modalService: ModalService,
   ) {
   }
-
 
   form = new FormGroup({
     title: new FormControl<string>('', [
@@ -41,5 +37,4 @@ export class CreateMovieComponent implements OnInit {
       error: err => console.error(err)
     });
   }
-
 }

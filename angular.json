@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-crash-course-2022": {
+    "angular-movie": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-crash-course-2022",
+            "outputPath": "dist/angular-movie",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-crash-course-2022:build:production"
+              "browserTarget": "angular-movie:build:production"
             },
             "development": {
-              "browserTarget": "angular-crash-course-2022:build:development"
+              "browserTarget": "angular-movie:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-crash-course-2022:build"
+            "browserTarget": "angular-movie:build"
           }
         },
         "test": {
