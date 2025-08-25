@@ -1,17 +1,34 @@
 <h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
 
-<input
-  type="text"
-  class="mb-2 border py-2 px-4 w-full"
-  placeholder="Filter movies..."
-  [(ngModel)]="term"
->
+<div class="relative mb-2">
+  <input
+    type="text"
+    class="mb-2 border py-2 px-4 w-full"
+    placeholder="Search movies..."
+    [(ngModel)]="term"
+    (ngModelChange)="onSearchChange($event)"
+  >
+  <button
+    *ngIf="term"
+    type="button"
+    (click)="clearInput()"
+    class="absolute right-3 top-1/2 -translate-y-[60%] text-gray-500 hover:text-black h-5 w-5 flex items-center justify-center"
+  >
+    ✕
+  </button>
+</div>
 
 <p *ngIf="loading" class="text-center text-lg">Loading...</p>
 
-<div *ngIf="moviesService.movies">
+<div *ngIf="!loading && moviesService.movies?.length === 0">
+  <p class="text-center text-lg">
+    No movies found with name "{{ moviesService.lastSearchTerm }}"
+  </p>
+</div>
+
+<div *ngIf="moviesService.movies.length > 0">
   <app-movie
-    *ngFor="let movie of moviesService.movies | filterMovies:term; let i = index"
+    *ngFor="let movie of moviesService.movies let i = index"
     [movie]="movie"
   ></app-movie>
 </div>
@@ -20,3 +37,44 @@
   *ngIf="modalService.isVisible$ | async" title="About Movie">
   <app-create-movie></app-create-movie>
 </app-modal>
+
+<div *ngIf="!loading && movies.length > 0">
+  <app-movie
+    *ngFor="let movie of movies; let i = index"
+    [movie]="movie"
+  ></app-movie>
+</div>
+
+<div *ngIf="!loading && movies.length > 0">
+  <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+</div>
+
+<div *ngIf="!loading && totalPages > 1" class="flex justify-center items-center mt-6 mb-10 space-x-3">
+  <button
+    class="px-4 py-2 rounded-xl border border-gray-300 shadow-sm
+           bg-white text-gray-700 font-medium
+           hover:bg-gray-100 hover:shadow-md
+           disabled:opacity-40 disabled:cursor-not-allowed
+           transition-all duration-200"
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)">
+    ‹ Prev
+  </button>
+
+  <span class="px-5 py-2 rounded-xl bg-gray-100 text-gray-800 font-semibold shadow-sm">
+    Page {{ currentPage }} of {{ totalPages }}
+  </span>
+
+  <button
+    class="px-4 py-2 rounded-xl border border-gray-300 shadow-sm
+           bg-white text-gray-700 font-medium
+           hover:bg-gray-100 hover:shadow-md
+           disabled:opacity-40 disabled:cursor-not-allowed
+           transition-all duration-200"
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)">
+    Next ›
+  </button>
+</div>
+
+
