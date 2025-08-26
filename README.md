@@ -10,7 +10,7 @@ This is an Angular project for browsing movies, built with **Angular 14**.
 - Angular Router for navigation
 - HTTP requests to external Movie API
 
-> ⚠️ To run this project, you need a **Movie API key**. You can either request it from the project author or create your own on the API provider's website.
+> ⚠️ To run this project, you need a **Movie API key**. You can either request it from the project author or create your own on the API provider's website. https://developer.themoviedb.org/docs/getting-started
 
 ---
 
@@ -30,9 +30,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> ⚡ **Note:** This project has a GitHub Actions pipeline configured to automatically run all unit tests on every Pull Request to the `main` branch. Merge is blocked if any test fails, ensuring code quality and stability.
 
 ## Author
 
